@@ -17,3 +17,35 @@ Run 1 data (2011-2012) at $\sqrt{s} = 7\text{-}8$ TeV was used, corresponding to
 ## Analysis Methodology
 
 ### Helicity Angle Reconstruction
+
+The helicity angle $\theta$ between the $B^{+}$ and $K^{+}$ in the $K_{1}^{+}$ rest frame provides sensitivity to photon polarization. Reconstruction proceeds by building four-momentum vectors for all final state particles, then boosting to the $K_{1}^{+}$ rest frame where momentum conservation gives $\vec{p}_{K^+} = -\vec{p}_{\omega}$ and $\vec{p}_{B^+} = \vec{p}_{\gamma}$.
+
+The helicity angle is computed as:
+
+$$\cos\theta_{\text{hel}} = \frac{\vec{p}_{B^+} \cdot \vec{p}_{K^+}}{|\vec{p}_{B^+}| \times |\vec{p}_{K^+}|}$$
+
+Analysis of simulated events showed excellent resolution ($\sigma \sim 0.01$ in cosine) and revealed detector acceptance effects that distort the flat generated distribution.
+
+### Preselection Development
+
+Using Monte Carlo signal samples, I developed cuts on three categories of variables.
+
+**Particle Identification:** Neural network outputs distinguish different particle types based on RICH detector information. The variables ProbNNpi, ProbNNk, and ProbNNp are bounded between 0 and 1, where higher values indicate stronger confidence that a track is a pion, kaon, or proton respectively. These neural networks analyze the Cherenkov ring patterns produced when charged particles traverse the RICH detectors, since particles with different masses produce rings of different sizes for the same momentum. For photons, gammaCL indicates the quality of electromagnetic shower reconstruction in the calorimeters, while isPhoton separates single photons from merged $\pi^{0}$ candidates based on the energy deposition profile.
+
+**Topological Variables:** IPCHI2_OWNPV measures how consistent a track is with originating from the primary vertex (higher values indicate the particle likely comes from a secondary decay). For the $B^{+}$, FD_OWNPV measures flight distance, FDCHI2_OWNPV quantifies the significance of this separation between primary and decay vertices, DIRA_OWNPV checks alignment between the momentum vector and the flight direction, and ENDVERTEX_CHI2 assesses vertex reconstruction quality.
+
+**Invariant Masses:** Reconstructed masses of intermediate resonances ($\omega$, $K_{1}^{+}$) and the $B^{+}$ candidate provide discrimination against combinatorial background.
+
+The optimized cuts achieved 57% signal efficiency on truth-matched simulated events. This efficiency results from sequential application of different cut categories: charged particle identification retains 91% of signal (corresponding to about 97% efficiency per individual track), neutral particle identification keeps 81%, mass cuts retain essentially all signal (100%), and trigger requirements accept 76% of events. Multiplying these sequential efficiencies gives the overall 57% signal retention.
+
+### Background Rejection
+
+Examination of two-body and three-body invariant mass distributions in data revealed specific resonant backgrounds requiring vetoes:
+- $K^{*0}(892) \to K^{+}\pi^{-}$ at 892 MeV
+- $D^{0} \to K^{-}\pi^{+}$ and $D^{0} \to K^{-}\pi^{+}\pi^{0}$ at 1865 MeV
+
+Excluding candidates with $m_{K^+\pi^-} \in [840, 970]$ MeV, $m_{K^+\pi^-} \in [1750, 1970]$ MeV, or $m_{K^+\pi^-\pi^0} \in [1750, 1970]$ MeV removes these specific backgrounds. Applied to signal Monte Carlo, these vetoes retain 85% of events (meaning only 15% of true signal happens to fall into these mass windows by chance). On data, these vetoes reduced the sample by a factor of 1.6, indicating these resonances contributed significantly to the initial candidate pool.
+
+## Results on Run 1 Data
+
+Starting from inclusive samples combining a high-energy photon with three tracks and a $\pi^{0}$, initial mass window cuts reduced the dataset by a factor of about 30. The full preselection then further reduced this to approximately 100,000 candidates passing all trigger and particle identification requirements. Tightening the mass cuts on $\omega$ (600-900 MeV) and $K_{1}^{+}$ (below 1500 MeV) brought the final sample down to roughly 2,600 candidates.
