@@ -1,1 +1,19 @@
-# Internship-M1-B-meson-decay
+# Study of $B^{+} \to K_{1}^{+}\gamma$ at LHCb
+
+![ROOT](https://img.shields.io/badge/ROOT-%236bc0dc?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MUREM0ZCMTE3QTVFMzExODVDNDhENDcyNTVBNzdGNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCQzE5MUFBRkE1MjQxMUUzQTA4MTk2NkU0MDQyNzlGQSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCQzE5MUFBRUE1MjQxMUUzQTA4MTk2NkU0MDQyNzlGQSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5MkREM0ZCMTE3QTVFMzExODVDNDhENDcyNTVBNzdGNSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5MUREM0ZCMTE3QTVFMzExODVDNDhENDcyNTVBNzdGNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pj5Q9FoAAAJsSURBVHjanFZdSBRRFD5zd/YnS7MN7WcpVkUEoYfoNRB8SbCHFMGeggh6DXrohzDoLRDRCHzOl3rspSgIIXroPQzZsFZf1M3ZndZddWd3ZvZ2znBnGX9m5o4HPu783Hu+O+ecOd9VOOcQYF2IUcQYIoPoEc9XEeuI94jPiIKvByI4AmnEHKLOw43mzIs1h3wd5XwIUeLRjdaMhBHcQ1j8mNbk3F6qNZ55fSqeHAwjPiESQUl5tFGGZcNs3cdAgcGUCr1JFU4yBkjCf9TMu9OZzgVvDih+WzK7vJrb5NN/K4Fzdu2miUMX+WZiI09ExQSaZjWhhBjA3QZZG1NownO6JoI04gFIWE6Epi+EQNh98k0Ek2FxbxHUTYgpAL0JKQLyOcFEcqWMknsxHoMUU2SXjBLBoOzsnGFBfzIOEeyKm4NQs7GaV+pEoEYhSDO/NwXThqdY87b4TfINC7D2oC8RicCpIv3gwwV9F4Z/b8Hbf3vwoVLbV0ERv0AngmX3Lo8hGFstwovCNtzoSEEWdztf3HHe/cJ3xyBYYth4vlLzeaVVYWKtCNdOJOB7/zmYzZyBh93tzs6/VA1nPI8V1B5jUQg+Ki8L21ksv5Xrp5Lq7c62fQ4o/jfzmlOWmmXDpbgK77JnZZ03EBecXvStaiz69ZXFSo1f/rnuYGqjHKW5vva267TV9NeAW3nNIXhT2pF1XnYFyI2Hji1gXHzWIXvc3eGMA3I/mY0Yb1XnAcGZ9JPJO2tFvtkI1SJLiFZ0yfxjmDKSOSSjyYTTiBnEnqToz/mJvhJybKE+NSKOLT0eUdLE0cU9tuh+Dv4LMAASgaKyrsoPnQAAAABJRU5ErkJggg==) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?logo=c%2B%2B&logoColor=white) ![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?logo=latex&logoColor=white)
+
+## Theoretical Context
+
+This internship focuses on the rare radiative decay $B^{+} \to K_{1}^{+}\gamma$, which is a flavor-changing neutral current (FCNC) process forbidden at tree level in the Standard Model. The decay proceeds via penguin diagrams at loop level through the $b \to s\gamma$ transition, where a bottom quark changes flavor to a strange quark while emitting an energetic photon. Due to the $V-A$ structure of weak interactions, Standard Model predictions favor left-handed photon polarization. Observing right-handed photons would signal new physics contributions.
+
+The transition amplitude is proportional to the CKM matrix element $V_{ts}$, and the top quark dominates the loop due to its large mass. The reconstructed final state consists of $B^{+} \to K_{1}^{+}(K^{+}\omega[\pi^{+}\pi^{-}\pi^{0}])\gamma$, requiring identification of three charged tracks, one high-energy photon, and a $\pi^{0}$ decaying to two photons.
+
+## The LHCb Detector and Data
+
+LHCb is a forward single-arm spectrometer designed to study beauty and charm physics in the high $b\bar{b}$ production region at the LHC. The detector combines tracking systems (VELO, TT, T1-T3 stations) with a dipole magnet for momentum measurement, RICH detectors for particle identification, calorimeters for energy measurement, and a muon system.
+
+Run 1 data (2011-2012) at $\sqrt{s} = 7\text{-}8$ TeV was used, corresponding to an integrated luminosity of approximately 3 fb$^{-1}$. Events were selected using radiative trigger lines requiring high transverse energy deposits in the calorimeters and high-$p_T$ tracks with large impact parameters.
+
+## Analysis Methodology
+
+### Helicity Angle Reconstruction
