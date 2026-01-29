@@ -49,3 +49,58 @@ Excluding candidates with $m_{K^+\pi^-} \in [840, 970]$ MeV, $m_{K^+\pi^-} \in [
 ## Results on Run 1 Data
 
 Starting from inclusive samples combining a high-energy photon with three tracks and a $\pi^{0}$, initial mass window cuts reduced the dataset by a factor of about 30. The full preselection then further reduced this to approximately 100,000 candidates passing all trigger and particle identification requirements. Tightening the mass cuts on $\omega$ (600-900 MeV) and $K_{1}^{+}$ (below 1500 MeV) brought the final sample down to roughly 2,600 candidates.
+
+<div align="center">
+<img src="images/omega_k1_comparison.png" alt="Comparison of omega and K1 mass distributions" width="600"/>
+</div>
+
+**Figure:** Reconstructed invariant mass distributions for the $K_{1}^{+}$ (left) and $\omega$ (right) candidates. Red histograms show signal MC events, blue histograms show Run 1 data after preselection. The distributions are normalized to unity area for comparison.
+
+The $\omega$ meson appeared as a clear peak at 783 MeV in the $\pi^{+}\pi^{-}\pi^{0}$ invariant mass distribution, demonstrating successful reconstruction of this intermediate state and validating the analysis approach. However, no clear $K_{1}^{+}$ signal emerged in the $K^{+}\omega$ invariant mass spectrum, where the data distribution remains relatively flat compared to the peaked MC signal expectation around 1335 MeV.
+
+An exploratory fit to the $B^{+}$ mass distribution used a Gaussian for signal ($\mu = 5294$ MeV, $\sigma = 106$ MeV fixed from MC) plus an exponential and flat component for background. While a small excess appeared near the $B^{+}$ mass around 5280 MeV, the poor fit quality ($\chi^2/\text{ndf} = 47/24$) and absence of $K_{1}^{+}$ signal suggest either insufficient statistics or additional background components not yet modeled. Proper treatment would require ARGUS-type functions for partially reconstructed decays.
+
+## Code Implementation
+
+The analysis was performed in ROOT's C++ framework. A typical preselection loop structure:
+```cpp
+TFile* file = TFile::Open("data.root");
+TTree* tree = (TTree*)file->Get("DecayTree");
+
+// Branch addresses
+Double_t B_M, Kplus_ProbNNk, gamma_CL;
+tree->SetBranchAddress("B_M", &B_M);
+tree->SetBranchAddress("Kplus_ProbNNk", &Kplus_ProbNNk);
+tree->SetBranchAddress("gamma_CL", &gamma_CL);
+
+// Preselection loop
+for(Long64_t i = 0; i < tree->GetEntries(); i++) {
+    tree->GetEntry(i);
+    
+    if(Kplus_ProbNNk < 0.2) continue;
+    if(gamma_CL < 0.2) continue;
+    if(B_M < 4500 || B_M > 7000) continue;
+    
+    // Event passes preselection
+    h_B_M->Fill(B_M);
+}
+```
+
+Helicity reconstruction used TLorentzVector objects for Lorentz transformations:
+```cpp
+TLorentzVector pB, pK1, pKplus, pGamma;
+// ... set four-momenta from tree branches ...
+
+TVector3 boostK1 = pK1.BoostVector();
+pB.Boost(-boostK1);
+pKplus.Boost(-boostK1);
+
+Double_t cosHelicity = pB.Vect().Dot(pKplus.Vect()) / 
+                       (pB.Vect().Mag() * pKplus.Vect().Mag());
+```
+
+The BackgroundCategory tool classified reconstructed candidates by matching decay products to true MC particles, separating fully matched signal (BKGCAT = 10) from combinatorial background.
+
+## Outlook
+
+This work establishes the framework for $B^{+} \to K_{1}^{+}\gamma$ analysis at LHCb. Future improvements may include incorporating Run 2 data (expecting a 3-4× statistics increase), implementing multivariate analysis for better signal/background separation, modeling specific resonant backgrounds with dedicated MC samples, and extracting photon polarization from the helicity angle distribution once sufficient signal is observed.
